@@ -199,7 +199,7 @@ app.event('app_home_opened', async ({ event, client, context }) => {
 
 
 // The open_modal shortcut opens a plain old modal
-app.shortcut('open_modal', async ({ shortcut, ack, client }) => {
+app.shortcut('nike_lookup', async ({ shortcut, ack, client }) => {
 
   try {
     // Acknowledge shortcut request
