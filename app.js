@@ -534,7 +534,7 @@ app.view("found_shoe", async ({ ack, body, view, context }) => {
 						"emoji": true
 					},
 					"value": "click_me_123",
-					"action_id": "actionId-0",
+					"action_id": "actionId-instock",
 					"style": "primary"
 				}
 			]
