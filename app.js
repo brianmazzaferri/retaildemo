@@ -295,7 +295,8 @@ app.shortcut('nike_lookup', async ({ shortcut, ack, client }) => {
   }
 });
 
-/*
+// Listen for a button invocation with action_id `button_abc` (assume it's inside of a modal)
+// You must set up a Request URL under Interactive Components on your app configuration page
 app.action('actionId-3', async ({ ack, body, context }) => {
   // Acknowledge the button request
   ack();
@@ -339,8 +340,14 @@ app.action('actionId-3', async ({ ack, body, context }) => {
 		}
 	]
 }
+    });
+    console.log(result);
+  }
+  catch (error) {
+    console.error(error);
+  }
 });
-*/
+
 //BOILERPLATE BELOW HERE
 
 //look up any one document from a query string
