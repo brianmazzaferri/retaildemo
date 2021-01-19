@@ -348,6 +348,114 @@ app.action('actionId-3', async ({ ack, body, context }) => {
   }
 });
 
+
+app.view("shoe_lookup", async ({ ack, body, view, context }) => {
+  try {
+
+    await ack({
+      response_action:"update",
+      view:{
+	"title": {
+		"type": "plain_text",
+		"text": "Nike Shoe Lookup",
+		"emoji": true
+	},
+	"submit": {
+		"type": "plain_text",
+		"text": ":nike: Submit",
+		"emoji": true
+	},
+	"type": "modal",
+	"callback_id": "found_shoe",
+	"close": {
+		"type": "plain_text",
+		"text": "Cancel",
+		"emoji": true
+	},
+	"blocks": [
+		{
+			"type": "image",
+			"title": {
+				"type": "plain_text",
+				"text": "Womens - Nike React Infinity Run Flyknit 2",
+				"emoji": true
+			},
+			"image_url": "https://static.nike.com/a/images/f_auto/dpr_2.0/w_1680,c_limit/28ad4584-92b2-43a3-9610-63327b8aea51/womens-shoes-clothing-accessories.jpg",
+			"alt_text": " "
+		},
+		{
+			"type": "input",
+			"element": {
+				"type": "plain_text_input",
+				"action_id": "plain_text_input-action"
+			},
+			"label": {
+				"type": "plain_text",
+				"text": "Enter Size",
+				"emoji": true
+			}
+		},
+		{
+			"type": "input",
+			"element": {
+				"type": "static_select",
+				"placeholder": {
+					"type": "plain_text",
+					"text": "Select color",
+					"emoji": true
+				},
+				"options": [
+					{
+						"text": {
+							"type": "plain_text",
+							"text": "Violet Dust/Black/Cyber/Elemental Pink",
+							"emoji": true
+						},
+						"value": "value-0"
+					},
+					{
+						"text": {
+							"type": "plain_text",
+							"text": "Anthracite/Black/Lagoon Pulse/Ghost",
+							"emoji": true
+						},
+						"value": "value-1"
+					},
+					{
+						"text": {
+							"type": "plain_text",
+							"text": "White/Platinum Tint/Light Zitron/White",
+							"emoji": true
+						},
+						"value": "value-2"
+					},
+					{
+						"text": {
+							"type": "plain_text",
+							"text": "Black/Iron Grey/White",
+							"emoji": true
+						},
+						"value": "value-3"
+					}
+				],
+				"action_id": "static_select-action"
+			},
+			"label": {
+				"type": "plain_text",
+				"text": "Select Color",
+				"emoji": true
+			}
+		}
+	]
+}
+	    
+    });
+
+  } catch (error) {
+    console.error(error);
+  }
+});
+
 //BOILERPLATE BELOW HERE
 
 //look up any one document from a query string
