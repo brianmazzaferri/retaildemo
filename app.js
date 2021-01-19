@@ -212,7 +212,7 @@ app.shortcut('nike_lookup', async ({ shortcut, ack, client }) => {
 	"callback_id": "nike_lookup_modal",
 	"title": {
 		"type": "plain_text",
-		"text": "Lookup",
+		"text": "Nike Lookup",
 		"emoji": true
 	},
 	"submit": {
@@ -288,6 +288,72 @@ app.shortcut('nike_lookup', async ({ shortcut, ack, client }) => {
 }
     });
 
+    console.log(result);
+  }
+  catch (error) {
+    console.error(error);
+  }
+});
+
+
+app.action('actionId-3', async ({ ack, body, context }) => {
+  // Acknowledge the button request
+  ack();
+
+  try {
+    const result = await app.client.views.update({
+      token: context.botToken,
+      // Pass the view_id
+      view_id: body.view.id,
+      // View payload with updated blocks
+      view: {
+	"title": {
+		"type": "plain_text",
+		"text": "Nike Shoe Lookup",
+		"emoji": true
+	},
+	"submit": {
+		"type": "plain_text",
+		"text": ":nike: Submit",
+		"emoji": true
+	},
+	"type": "modal",
+	"close": {
+		"type": "plain_text",
+		"text": "Cancel",
+		"emoji": true
+	},
+	"blocks": [
+		{
+			"type": "input",
+			"element": {
+				"type": "plain_text_input",
+				"action_id": "plain_text_input-action"
+			},
+			"label": {
+				"type": "plain_text",
+				"text": "Type in Name, SKU, or Category! We'll find it.",
+				"emoji": true
+			}
+		},
+		{
+			"type": "actions",
+			"elements": [
+				{
+					"type": "button",
+					"text": {
+						"type": "plain_text",
+						"text": "Continue",
+						"emoji": true
+					},
+					"value": "click_me_123",
+					"action_id": "actionId-0"
+				}
+			]
+		}
+	]
+}
+    });
     console.log(result);
   }
   catch (error) {
