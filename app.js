@@ -463,33 +463,40 @@ app.view("found_shoe", async ({ ack, body, view, context }) => {
 	  console.log(context);
 	  console.log("BODY:");
 	  console.log(body);
-/*    const result = await app.client.chat.postMessage({
+    const result = await app.client.chat.postMessage({
       token: context.botToken,
       // Channel to send message to
-      channel: context.user,
+      channel: body.user.id,
       // Include a button in the message (or whatever blocks you want!)
       blocks: [
-        {
-          type: 'section',
-          text: {
-            type: 'mrkdwn',
-            text: 'Go ahead. Click it.'
-          },
-          accessory: {
-            type: 'button',
-            text: {
-              type: 'plain_text',
-              text: 'Click me!'
-            },
-            action_id: 'button_abc'
-          }
-        }
-      ],
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "Thank you <@WA62TKZU1> for your submission!\n\n\nPlease check <#C01JRKE063V>"
+			},
+			"accessory": {
+				"type": "image",
+				"image_url": "https://static.nike.com/a/images/f_auto/dpr_2.0/w_1680,c_limit/28ad4584-92b2-43a3-9610-63327b8aea51/womens-shoes-clothing-accessories.jpg",
+				"alt_text": " "
+			}
+		},
+		{
+			"type": "context",
+			"elements": [
+				{
+					"type": "plain_text",
+					"text": "Teams typically reply within minutes to confirm inventory",
+					"emoji": true
+				}
+			]
+		}
+	],
       // Text in the notification
-      text: 'Message from Test App'
+      text: 'Message from Nike Retail'
     });
     console.log(result); 
-  }*/
+  }
 
   } catch (error) {
     console.error(error);
