@@ -485,8 +485,8 @@ app.view("found_shoe", async ({ ack, body, view, context }) => {
       // Text in the notification
       text: 'Message from Test App'
     });
-    console.log(result); */
-  }
+    console.log(result); 
+  }*/
 
   } catch (error) {
     console.error(error);
