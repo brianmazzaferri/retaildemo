@@ -33,7 +33,168 @@ const app = new App({
 
 //LISTENERS GO HERE
 
+app.event('app_home_opened', async ({ event, client, context }) => {
+  try {
+    /* view.publish is the method that your app uses to push a view to the Home tab */
+    const result = await client.views.publish({
 
+      /* the user that opened your app's app home */
+      user_id: event.user,
+
+      /* the view object that appears in the app home*/
+      view: {
+	"blocks": [
+		{
+			"type": "header",
+			"text": {
+				"type": "plain_text",
+				"text": ":trophy: Goal Tracker :trophy:\n\n  Store-1458",
+				"emoji": true
+			}
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "Leaderboard"
+			}
+		},
+		{
+			"type": "context",
+			"elements": [
+				{
+					"type": "mrkdwn",
+					"text": "*Who's currently winning?*"
+				},
+				{
+					"type": "image",
+					"image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX6Fkw11_f3j-XYGQS5MzH_Bfkdu-zrmASwA&usqp=CAU",
+					"alt_text": " "
+				}
+			]
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "context",
+			"elements": [
+				{
+					"type": "image",
+					"image_url": "https://upload.wikimedia.org/wikipedia/en/thumb/3/37/Jumpman_logo.svg/1200px-Jumpman_logo.svg.png",
+					"alt_text": " "
+				},
+				{
+					"type": "plain_text",
+					"emoji": true,
+					"text": "Jordan"
+				}
+			]
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "*<@WA6C1KQ3W>*\n\n*Customer Interactions*\n:arrow_up: *43%* from last week\n\n*Products Sold*\n:arrow_up: *89%* from last week\n\n*Upsold*\n:arrow_up: *18%* from last week\n"
+			},
+			"accessory": {
+				"type": "image",
+				"image_url": "https://ca.slack-edge.com/EA62SV8QZ-WA6C1KQ3W-97ae19bb4b38-512",
+				"alt_text": " "
+			}
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "context",
+			"elements": [
+				{
+					"type": "image",
+					"image_url": "https://www.logolynx.com/images/logolynx/2a/2ab5aba3124262970e5235e1758db9df.jpeg",
+					"alt_text": " "
+				},
+				{
+					"type": "plain_text",
+					"emoji": true,
+					"text": "Running"
+				}
+			]
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "*<@WA62TKZU1>*\n\n*Customer Interactions*\n:arrow_up: *27%* from last week\n\n*Products Sold*\n:arrow_up: *76%* from last week\n\n*Upsold*\n:arrow_up: *27%* from last week\n"
+			},
+			"accessory": {
+				"type": "image",
+				"image_url": "https://ca.slack-edge.com/EA62SV8QZ-WA62TKZU1-dd221d73f46e-512",
+				"alt_text": " "
+			}
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "*Total Products Sold*        🟩🟩🟩🟩🟩🟩🟩🟩82%\n*Revenue Target*               🟩🟩🟩🟩🟩🟩 62%\n*Jordan Promo Contest*   🟩🟩🟩🟩🟩🟩🟩🟩🟩 94%"
+			},
+			"accessory": {
+				"type": "image",
+				"image_url": "https://icon-library.com/images/statistics-icon/statistics-icon-5.jpg",
+				"alt_text": " "
+			}
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "header",
+			"text": {
+				"type": "plain_text",
+				"text": "Active Promotions January-February 2021",
+				"emoji": true
+			}
+		},
+		{
+			"type": "section",
+			"fields": [
+				{
+					"type": "mrkdwn",
+					"text": ":one: *Up To 40% off Select Reacts*"
+				}
+			]
+		},
+		{
+			"type": "section",
+			"fields": [
+				{
+					"type": "mrkdwn",
+					"text": ":two: *Sustainable Materials extra sale - 10% extra off*"
+				}
+			]
+		},
+		{
+			"type": "context",
+			"elements": [
+				{
+					"type": "plain_text",
+					"text": "Ends March 1st, 2021",
+					"emoji": true
+				}
+			]
+		}
+	]
+}
+    });
+  }
+  catch (error) {
+    console.error(error);
+  }
+});
 
 //BOILERPLATE BELOW HERE
 
