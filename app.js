@@ -456,6 +456,20 @@ app.view("shoe_lookup", async ({ ack, body, view, context }) => {
   }
 });
 
+app.view("found_shoe", async ({ ack, body, view, context }) => {
+  try {
+
+    await ack();
+	  
+	  
+	    
+    });
+
+  } catch (error) {
+    console.error(error);
+  }
+});
+
 //BOILERPLATE BELOW HERE
 
 //look up any one document from a query string
