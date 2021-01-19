@@ -215,11 +215,11 @@ app.shortcut('nike_lookup', async ({ shortcut, ack, client }) => {
 		"text": "Nike Lookup",
 		"emoji": true
 	},
-	"submit": {
+/*	"submit": {
 		"type": "plain_text",
 		"text": ":nike: Submit",
 		"emoji": true
-	},
+	},  */
 	"type": "modal",
 	"close": {
 		"type": "plain_text",
@@ -318,6 +318,7 @@ app.action('actionId-3', async ({ ack, body, context }) => {
 		"emoji": true
 	},
 	"type": "modal",
+	"callback_id": "shoe_lookup",
 	"close": {
 		"type": "plain_text",
 		"text": "Cancel",
@@ -335,30 +336,9 @@ app.action('actionId-3', async ({ ack, body, context }) => {
 				"text": "Type in Name, SKU, or Category! We'll find it.",
 				"emoji": true
 			}
-		},
-		{
-			"type": "actions",
-			"elements": [
-				{
-					"type": "button",
-					"text": {
-						"type": "plain_text",
-						"text": "Continue",
-						"emoji": true
-					},
-					"value": "click_me_123",
-					"action_id": "actionId-0"
-				}
-			]
 		}
 	]
 }
-    });
-    console.log(result);
-  }
-  catch (error) {
-    console.error(error);
-  }
 });
 
 //BOILERPLATE BELOW HERE
