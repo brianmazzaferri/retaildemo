@@ -197,6 +197,104 @@ app.event('app_home_opened', async ({ event, client, context }) => {
   }
 });
 
+
+// The open_modal shortcut opens a plain old modal
+app.shortcut('open_modal', async ({ shortcut, ack, client }) => {
+
+  try {
+    // Acknowledge shortcut request
+    await ack();
+
+    // Call the views.open method using one of the built-in WebClients
+    const result = await client.views.open({
+      trigger_id: shortcut.trigger_id,
+      view: {
+	"callback_id": "nike_lookup_modal",
+	"title": {
+		"type": "plain_text",
+		"text": "Lookup",
+		"emoji": true
+	},
+	"submit": {
+		"type": "plain_text",
+		"text": ":nike: Submit",
+		"emoji": true
+	},
+	"type": "modal",
+	"close": {
+		"type": "plain_text",
+		"text": "Cancel",
+		"emoji": true
+	},
+	"blocks": [
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "Welcome to the lookup! :mag:"
+			}
+		},
+		{
+			"type": "context",
+			"elements": [
+				{
+					"type": "plain_text",
+					"text": "Select the item category from the below list",
+					"emoji": true
+				}
+			]
+		},
+		{
+			"type": "actions",
+			"elements": [
+				{
+					"type": "static_select",
+					"placeholder": {
+						"type": "plain_text",
+						"text": "Select an item",
+						"emoji": true
+					},
+					"options": [
+						{
+							"text": {
+								"type": "plain_text",
+								"text": "Shoes",
+								"emoji": true
+							},
+							"value": "value-0"
+						},
+						{
+							"text": {
+								"type": "plain_text",
+								"text": "Clothing",
+								"emoji": true
+							},
+							"value": "value-1"
+						},
+						{
+							"text": {
+								"type": "plain_text",
+								"text": "Accessories & Equipment",
+								"emoji": true
+							},
+							"value": "value-2"
+						}
+					],
+					"action_id": "actionId-3"
+				}
+			]
+		}
+	]
+}
+    });
+
+    console.log(result);
+  }
+  catch (error) {
+    console.error(error);
+  }
+});
+
 //BOILERPLATE BELOW HERE
 
 //look up any one document from a query string
