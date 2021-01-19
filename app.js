@@ -459,10 +459,11 @@ app.view("shoe_lookup", async ({ ack, body, view, context }) => {
 app.view("found_shoe", async ({ ack, body, view, context }) => {
 	await ack();
   try {
-	  console.log("CONTEXT:");
-	  console.log(context);
-	  console.log("BODY:");
-	  console.log(body);
+//	  console.log("CONTEXT:");
+//	  console.log(context);
+//	  console.log("BODY:");
+//	  console.log(body);
+	  
     const result = await app.client.chat.postMessage({
       token: context.botToken,
       // Channel to send message to
@@ -488,6 +489,69 @@ app.view("found_shoe", async ({ ack, body, view, context }) => {
 					"type": "plain_text",
 					"text": "Teams typically reply within minutes to confirm inventory",
 					"emoji": true
+				}
+			]
+		}
+	],
+      // Text in the notification
+      text: 'Message from Nike Retail'
+    });
+    console.log(result); 
+	  
+	  const result = await app.client.chat.postMessage({
+      token: context.botToken,
+      // Channel to send message to
+      channel: "C01JRKE063V",
+      // Include a button in the message (or whatever blocks you want!)
+      blocks: [
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "Hi @here! New request from Nike Store 1458"
+			},
+			"accessory": {
+				"type": "image",
+				"image_url": "https://static.nike.com/a/images/f_auto/dpr_2.0/w_1680,c_limit/28ad4584-92b2-43a3-9610-63327b8aea51/womens-shoes-clothing-accessories.jpg",
+				"alt_text": " "
+			}
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "*Details*\nWomen's Nike React Infinity Run Flyknit 2 - <https://www.nike.com/t/react-infinity-run-flyknit-2-womens-running-shoe-jjdZzC/CT2423-500|more info>\n\n*Style* - CT2423-500\n*Color*: Violet Dust/Black/Cyber/Elemental Pink"
+			}
+		},
+		{
+			"type": "actions",
+			"elements": [
+				{
+					"type": "button",
+					"text": {
+						"type": "plain_text",
+						"text": "In Stock - Page Store 1458 :white_check_mark:",
+						"emoji": true
+					},
+					"value": "click_me_123",
+					"action_id": "actionId-0",
+					"style": "primary"
+				}
+			]
+		},
+		{
+			"type": "actions",
+			"elements": [
+				{
+					"type": "button",
+					"text": {
+						"type": "plain_text",
+						"text": "Cannot Locate/Out of Stock ",
+						"emoji": true
+					},
+					"value": "click_me_123",
+					"action_id": "actionId-0",
+					"style": "danger"
 				}
 			]
 		}
