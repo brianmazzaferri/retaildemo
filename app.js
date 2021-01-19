@@ -459,7 +459,10 @@ app.view("shoe_lookup", async ({ ack, body, view, context }) => {
 app.view("found_shoe", async ({ ack, body, view, context }) => {
 	await ack();
   try {
+	  console.log("CONTEXT:");
 	  console.log(context);
+	  console.log("BODY:");
+	  console.log(body);
 /*    const result = await app.client.chat.postMessage({
       token: context.botToken,
       // Channel to send message to
