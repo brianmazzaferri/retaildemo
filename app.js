@@ -43,6 +43,7 @@ app.event('app_home_opened', async ({ event, client, context }) => {
 
       /* the view object that appears in the app home*/
       view: {
+	"type": "home",
 	"blocks": [
 		{
 			"type": "header",
