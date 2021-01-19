@@ -566,6 +566,25 @@ app.view("found_shoe", async ({ ack, body, view, context }) => {
   }
 });
 
+app.action('actionId-3', async ({ ack, body, context }) => {
+  // Acknowledge the button request
+  ack();
+
+  try {
+	  console.log("BODY");
+	  console.log(body);
+//    const result = await app.client.chat.update({
+//     	token: context.botToken,
+//	channel: "C01JRKE063V",
+//	ts:
+//    });
+//    console.log(result);
+  }
+  catch (error) {
+    console.error(error);
+  }
+});
+
 //BOILERPLATE BELOW HERE
 
 //look up any one document from a query string
