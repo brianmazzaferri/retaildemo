@@ -141,7 +141,7 @@ app.event('app_home_opened', async ({ event, client, context }) => {
 			"type": "section",
 			"text": {
 				"type": "mrkdwn",
-				"text": "*Total Products Sold*        🟩🟩🟩🟩🟩🟩🟩🟩82%\n*Revenue Target*               🟩🟩🟩🟩🟩🟩 62%\n*Jordan Promo Contest*   🟩🟩🟩🟩🟩🟩🟩🟩🟩 94%"
+				"text": "*Total Products Sold*        🟩🟩🟩🟩🟩🟩🟩🟩 82%\n*Revenue Target*               🟩🟩🟩🟩🟩🟩 62%\n*Jordan Promo Contest*   🟩🟩🟩🟩🟩🟩🟩🟩🟩 94%"
 			},
 			"accessory": {
 				"type": "image",
