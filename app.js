@@ -498,7 +498,7 @@ app.view("found_shoe", async ({ ack, body, view, context }) => {
     });
     console.log(result); 
 	  
-	  const result = await app.client.chat.postMessage({
+	  const result2 = await app.client.chat.postMessage({
       token: context.botToken,
       // Channel to send message to
       channel: "C01JRKE063V",
@@ -559,7 +559,7 @@ app.view("found_shoe", async ({ ack, body, view, context }) => {
       // Text in the notification
       text: 'Message from Nike Retail'
     });
-    console.log(result); 
+    console.log(result2); 
 
   } catch (error) {
     console.error(error);
