@@ -295,7 +295,7 @@ app.shortcut('nike_lookup', async ({ shortcut, ack, client }) => {
   }
 });
 
-
+/*
 app.action('actionId-3', async ({ ack, body, context }) => {
   // Acknowledge the button request
   ack();
@@ -340,7 +340,7 @@ app.action('actionId-3', async ({ ack, body, context }) => {
 	]
 }
 });
-
+*/
 //BOILERPLATE BELOW HERE
 
 //look up any one document from a query string
