@@ -566,13 +566,15 @@ app.view("found_shoe", async ({ ack, body, view, context }) => {
   }
 });
 
-app.action('actionId-3', async ({ ack, body, context }) => {
+app.action('actionId-instock', async ({ ack, body, context }) => {
   // Acknowledge the button request
   ack();
 
   try {
 	  console.log("BODY");
 	  console.log(body);
+	  console.log("CONTEXT");
+	  console.log(context);
 //    const result = await app.client.chat.update({
 //     	token: context.botToken,
 //	channel: "C01JRKE063V",
