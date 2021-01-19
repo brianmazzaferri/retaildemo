@@ -575,12 +575,33 @@ app.action('actionId-instock', async ({ ack, body, context }) => {
 	  console.log(body);
 	  console.log("CONTEXT");
 	  console.log(context);
-//    const result = await app.client.chat.update({
-//     	token: context.botToken,
-//	channel: "C01JRKE063V",
-//	ts:
-//    });
-//    console.log(result);
+    const result = await app.client.chat.update({
+     	token: context.botToken,
+	channel: "C01JRKE063V",
+	ts: body.message.ts,
+	blocks: [
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "Terrific! <@WA62TKZU1>, Nordstrom's has agreed to hold the item(s) for up to 3 hours. Please provide Store Information to our customer:"
+			},
+			"accessory": {
+				"type": "image",
+				"image_url": "https://static.nike.com/a/images/f_auto/dpr_2.0/w_1680,c_limit/28ad4584-92b2-43a3-9610-63327b8aea51/womens-shoes-clothing-accessories.jpg",
+				"alt_text": " "
+			}
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": ":round_pushpin: *Nordstrom* \n701 SW Broadway, Portland, OR 97205 \n503-224-6666 "
+			}
+		}
+	]
+    });
+    console.log(result);
   }
   catch (error) {
     console.error(error);
