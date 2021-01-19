@@ -215,11 +215,11 @@ app.shortcut('nike_lookup', async ({ shortcut, ack, client }) => {
 		"text": "Nike Lookup",
 		"emoji": true
 	},
-/*	"submit": {
+	"submit": {
 		"type": "plain_text",
 		"text": ":nike: Submit",
 		"emoji": true
-	},  */
+	},  
 	"type": "modal",
 	"close": {
 		"type": "plain_text",
