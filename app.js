@@ -496,7 +496,6 @@ app.view("found_shoe", async ({ ack, body, view, context }) => {
       text: 'Message from Nike Retail'
     });
     console.log(result); 
-  }
 
   } catch (error) {
     console.error(error);
