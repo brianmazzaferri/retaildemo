@@ -46,6 +46,26 @@ app.event('app_home_opened', async ({ event, client, context }) => {
 	"type": "home",
 	"blocks": [
 		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "*Nike Lookup App*"
+			},
+			"accessory": {
+				"type": "button",
+				"text": {
+					"type": "plain_text",
+					"text": ":nike:",
+					"emoji": true
+				},
+				"value": "click_me_123",
+				"action_id": "button-action"
+			}
+		},
+		{
+			"type": "divider"
+		},
+		{
 			"type": "header",
 			"text": {
 				"type": "plain_text",
@@ -130,7 +150,7 @@ app.event('app_home_opened', async ({ event, client, context }) => {
 			},
 			"accessory": {
 				"type": "image",
-				"image_url": "https://ca.slack-edge.com/EA62SV8QZ-WA62TKZU1-dd221d73f46e-512",
+				"image_url": "https://ca.slack-edge.com/EA62SV8QZ-WA62TKZU1-e61e7c4d714e-512",
 				"alt_text": " "
 			}
 		},
@@ -141,7 +161,7 @@ app.event('app_home_opened', async ({ event, client, context }) => {
 			"type": "section",
 			"text": {
 				"type": "mrkdwn",
-				"text": "*Total Products Sold*        🟩🟩🟩🟩🟩🟩🟩🟩 82%\n*Revenue Target*               🟩🟩🟩🟩🟩🟩 62%\n*Jordan Promo Contest*   🟩🟩🟩🟩🟩🟩🟩🟩🟩 94%"
+				"text": "*Total Products Sold*       \n 🟩🟩🟩🟩🟩🟩🟩🟩 82%\n*Revenue Target*               \n🟩🟩🟩🟩🟩🟩 62%\n*Jordan Promo Contest*   \n🟩🟩🟩🟩🟩🟩🟩🟩🟩 94%"
 			},
 			"accessory": {
 				"type": "image",
