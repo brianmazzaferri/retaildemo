@@ -219,7 +219,7 @@ app.event('app_home_opened', async ({ event, client, context }) => {
 
 
 // The open_modal shortcut opens a plain old modal
-app.shortcut('nike_lookup', async ({ shortcut, ack, client }) => {
+app.action('button-action', async ({ body, ack, client }) => {
 
   try {
     // Acknowledge shortcut request
@@ -227,7 +227,7 @@ app.shortcut('nike_lookup', async ({ shortcut, ack, client }) => {
 
     // Call the views.open method using one of the built-in WebClients
     const result = await client.views.open({
-      trigger_id: shortcut.trigger_id,
+      trigger_id: body.trigger_id,
       view: {
 	"callback_id": "nike_lookup_modal",
 	"title": {
