@@ -46,26 +46,6 @@ app.event('app_home_opened', async ({ event, client, context }) => {
 	"type": "home",
 	"blocks": [
 		{
-			"type": "section",
-			"text": {
-				"type": "mrkdwn",
-				"text": "*Nike Lookup App*"
-			},
-			"accessory": {
-				"type": "button",
-				"text": {
-					"type": "plain_text",
-					"text": ":nike:",
-					"emoji": true
-				},
-				"value": "click_me_123",
-				"action_id": "button-action"
-			}
-		},
-		{
-			"type": "divider"
-		},
-		{
 			"type": "header",
 			"text": {
 				"type": "plain_text",
@@ -79,20 +59,6 @@ app.event('app_home_opened', async ({ event, client, context }) => {
 				"type": "mrkdwn",
 				"text": "Leaderboard"
 			}
-		},
-		{
-			"type": "context",
-			"elements": [
-				{
-					"type": "mrkdwn",
-					"text": "*Who's currently winning?*"
-				},
-				{
-					"type": "image",
-					"image_url": "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRX6Fkw11_f3j-XYGQS5MzH_Bfkdu-zrmASwA&usqp=CAU",
-					"alt_text": " "
-				}
-			]
 		},
 		{
 			"type": "divider"
@@ -150,7 +116,7 @@ app.event('app_home_opened', async ({ event, client, context }) => {
 			},
 			"accessory": {
 				"type": "image",
-				"image_url": "https://ca.slack-edge.com/EA62SV8QZ-WA62TKZU1-e61e7c4d714e-512",
+				"image_url": "https://ca.slack-edge.com/EA62SV8QZ-WA62TKZU1-de03cea18223-512",
 				"alt_text": " "
 			}
 		},
@@ -161,7 +127,22 @@ app.event('app_home_opened', async ({ event, client, context }) => {
 			"type": "section",
 			"text": {
 				"type": "mrkdwn",
-				"text": "*Total Products Sold*       \n 🟩🟩🟩🟩🟩🟩🟩🟩 82%\n*Revenue Target*               \n🟩🟩🟩🟩🟩🟩 62%\n*Jordan Promo Contest*   \n🟩🟩🟩🟩🟩🟩🟩🟩🟩 94%"
+				"text": "*Membership Signups This Week*\n\n:first_place_medal: - <@WA6NV916H> with 31\n\n:second_place_medal: - <@WA7FN568N> with 29\n\n:third_place_medal: - <@WA5TRPRQ8> with 19\n\n*Total Signups for 1458*: 120"
+			},
+			"accessory": {
+				"type": "image",
+				"image_url": "https://s3.amazonaws.com/nikeinc/assets/54289/Nike-Plus-Icon-Only_native_1000.jpg?1458055638",
+				"alt_text": " "
+			}
+		},
+		{
+			"type": "divider"
+		},
+		{
+			"type": "section",
+			"text": {
+				"type": "mrkdwn",
+				"text": "*Total Products Sold*       \n 🟩🟩🟩🟩🟩🟩🟩🟩82%\n*Revenue Target*               \n🟩🟩🟩🟩🟩🟩 62%\n*Jordan Promo Contest*   \n🟩🟩🟩🟩🟩🟩🟩🟩🟩 94%"
 			},
 			"accessory": {
 				"type": "image",
@@ -173,40 +154,21 @@ app.event('app_home_opened', async ({ event, client, context }) => {
 			"type": "divider"
 		},
 		{
-			"type": "header",
+			"type": "section",
 			"text": {
-				"type": "plain_text",
-				"text": "Active Promotions January-February 2021",
-				"emoji": true
-			}
-		},
-		{
-			"type": "section",
-			"fields": [
-				{
-					"type": "mrkdwn",
-					"text": ":one: *Up To 40% off Select Reacts*"
-				}
-			]
-		},
-		{
-			"type": "section",
-			"fields": [
-				{
-					"type": "mrkdwn",
-					"text": ":two: *Sustainable Materials extra sale - 10% extra off*"
-				}
-			]
-		},
-		{
-			"type": "context",
-			"elements": [
-				{
+				"type": "mrkdwn",
+				"text": "*Nike Lookup App*"
+			},
+			"accessory": {
+				"type": "button",
+				"text": {
 					"type": "plain_text",
-					"text": "Ends March 1st, 2021",
+					"text": ":nike:",
 					"emoji": true
-				}
-			]
+				},
+				"value": "click_me_123",
+				"action_id": "button-action"
+			}
 		}
 	]
 }
